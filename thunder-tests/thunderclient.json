@@ -26,5 +26,24 @@
     "headers": [],
     "params": [],
     "tests": []
+  },
+  {
+    "_id": "961f1c87-f322-44e1-afaa-87685bd4bf98",
+    "colId": "5afad8cb-ff00-4e6b-8460-d0786fb7ce9b",
+    "containerId": "",
+    "name": "newProduct",
+    "url": "http://localhost:3000/products",
+    "method": "POST",
+    "sortNum": 30000,
+    "created": "2022-09-10T14:42:19.074Z",
+    "modified": "2022-09-10T15:22:39.099Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\": \"macarrao\"\n}",
+      "form": []
+    },
+    "tests": []
   }
 ]
