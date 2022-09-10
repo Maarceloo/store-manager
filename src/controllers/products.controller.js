@@ -1,5 +1,6 @@
 const getAllProducts = require('../services/getAllProducts');
 const getIdProducts = require('../services/getIdProducts');
+const newProducts = require('../services/postNewProduct');
 
 const getAll = async (_req, res) => {
   const resposta = await getAllProducts();
@@ -15,4 +16,9 @@ const getId = async (req, res) => {
   res.status(200).json(resposta[0]);
 };
 
-module.exports = { getAll, getId };
+const newPost = async (req, res) => { 
+  const result = await newProducts(req); /* Salva no banco e retorna o novo objeto salvo */
+  res.status(201).json(result);
+ };
+
+module.exports = { getAll, getId, newPost };
