@@ -36,12 +36,31 @@
     "method": "POST",
     "sortNum": 30000,
     "created": "2022-09-10T14:42:19.074Z",
-    "modified": "2022-09-10T16:02:11.156Z",
+    "modified": "2022-09-10T18:15:57.139Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"name\": \"aassssaaa\"\n}",
+      "raw": "{\n  \"name\": \"testandsdsddo\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "b68f1470-df4b-490b-b4e3-51651fa53311",
+    "colId": "5afad8cb-ff00-4e6b-8460-d0786fb7ce9b",
+    "containerId": "",
+    "name": "cadastartVenda",
+    "url": "http://localhost:3000/sales",
+    "method": "PUT",
+    "sortNum": 40000,
+    "created": "2022-09-10T19:35:49.435Z",
+    "modified": "2022-09-10T19:36:30.811Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "[\n  {\n    \"productId\": 1,\n    \"quantity\": 1\n  },\n  {\n    \"productId\": 2,\n    \"quantity\": 5\n  }\n]",
       "form": []
     },
     "tests": []
