@@ -21,4 +21,15 @@ const getIdSalesServices = async (req) => {
   return result;
 };
 
-module.exports = { newSalesServices, getAllSalesService, getIdSalesServices };
+const deleteSalesServices = async (req) => {
+  const { id } = req.params;
+  const result = await salesModels.deleteSalesModels(id);
+  return result;
+};
+
+module.exports = {
+  newSalesServices,
+  getAllSalesService,
+  getIdSalesServices,
+  deleteSalesServices,
+};

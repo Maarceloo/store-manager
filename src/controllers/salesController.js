@@ -16,4 +16,14 @@ const getIdSalesController = async (req, res) => {
   res.status(200).json(result);
  };
 
-module.exports = { newSalesController, getAllSalesController, getIdSalesController };
+const deleteSalesControllers = async (req, res) => {
+  const result = await salesServices.deleteSalesServices(req);
+  if (result) res.status(204).json();
+};
+
+module.exports = {
+  newSalesController,
+  getAllSalesController,
+  getIdSalesController,
+  deleteSalesControllers,
+};

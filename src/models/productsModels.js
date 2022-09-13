@@ -33,7 +33,6 @@ const deleteProductsModels = async (id) => {
   const [result] = await connection.execute(
     'DELETE FROM StoreManager.products WHERE id = (?)', [id],
   );
-  console.log(result);
   return result;
  };
 
