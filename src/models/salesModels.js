@@ -45,10 +45,18 @@ const deleteSalesModels = async (id) => {
   return result;
 };
 
+const changeSalesModels = async (productId, quantity) => {
+    await connection.execute(
+    'UPDATE StoreManager.sales_products SET quantity = (?) WHERE product_id = (?);',
+    [quantity, productId],
+  );
+};
+
 module.exports = {
   newSalesDateModels,
   addSalesDBModels,
   getAllSalesModels,
   getIdSalesModels,
   deleteSalesModels,
+  changeSalesModels,
 };

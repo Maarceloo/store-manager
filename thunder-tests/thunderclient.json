@@ -125,5 +125,24 @@
     "headers": [],
     "params": [],
     "tests": []
+  },
+  {
+    "_id": "ec01fd5d-0c2b-4479-a0a2-35738a8c25ef",
+    "colId": "5afad8cb-ff00-4e6b-8460-d0786fb7ce9b",
+    "containerId": "",
+    "name": "changeSales",
+    "url": "http://localhost:3000/sales/1",
+    "method": "PUT",
+    "sortNum": 100000,
+    "created": "2022-09-13T21:55:18.112Z",
+    "modified": "2022-09-13T21:56:18.060Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "[\n  {\n    \"productId\": 1,\n    \"quantity\": 10\n  },\n  {\n    \"productId\": 2,\n    \"quantity\": 50\n  }\n]",
+      "form": []
+    },
+    "tests": []
   }
 ]

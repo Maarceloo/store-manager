@@ -27,9 +27,26 @@ const deleteSalesServices = async (req) => {
   return result;
 };
 
+const changeSalesServices = async (req) => {
+  const { id } = req.params;
+  const sales = req.body;
+
+  await sales.map(
+    (iten) => salesModels.changeSalesModels(iten.productId, iten.quantity),
+  );
+  
+  const obj = {
+    saleId: Number(id),
+    itemsUpdated: sales,
+  };
+
+  return obj;
+ };
+
 module.exports = {
   newSalesServices,
   getAllSalesService,
   getIdSalesServices,
   deleteSalesServices,
+  changeSalesServices,
 };

@@ -21,4 +21,11 @@ salesRouter.get('/:id', salesIdValidation, salesController.getIdSalesController)
 
 salesRouter.delete('/:id', salesIdValidation, salesController.deleteSalesControllers);
 
+salesRouter.put('/:id',
+  productIdValidation,
+  quantityValidation,
+  productsIdDBValidation,
+  salesIdValidation,
+  salesController.changeSalesControllers);
+
 module.exports = salesRouter;
