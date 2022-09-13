@@ -19,8 +19,8 @@ describe('Testes na unidade de productsControllers', () => {
     res.status = sinon.stub().returns(res)
     res.json = sinon.stub().returns();
 
-    sinon.stub(productService, 'getAllProducts').resolves(productsDB)
-    await productControllers.getAll(req, res);
+    sinon.stub(productService, 'getAllProductsServices').resolves(productsDB)
+    await productControllers.getAllControllers(req, res);
 
     expect(res.status).to.have.been.calledWith(200)
     expect(res.json).to.have.been.calledWith(products)
@@ -33,8 +33,8 @@ describe('Testes na unidade de productsControllers', () => {
       res.status = sinon.stub().returns(res)
       res.json = sinon.stub().returns();
       
-      sinon.stub(productService, 'getIdProducts').resolves(productsDB[0]);
-      await productControllers.getId(req, res);
+      sinon.stub(productService, 'getIdProductsServices').resolves(productsDB[0]);
+      await productControllers.getIdControllers(req, res);
       
       expect(res.status).to.have.been.calledWith(200)
       expect(res.json).to.have.been.calledWith(products[0])
@@ -48,8 +48,8 @@ describe('Testes na unidade de productsControllers', () => {
       res.status = sinon.stub().returns(res)
       res.json = sinon.stub().returns();
 
-      sinon.stub(productService, 'getIdProducts').resolves()
-      await productControllers.getId(req, res);
+      sinon.stub(productService, 'getIdProductsServices').resolves()
+      await productControllers.getIdControllers(req, res);
 
       expect(res.status).to.have.been.calledWith(404)
       expect(res.json).to.have.been.calledWith({ message: 'Product not found' })
@@ -62,8 +62,8 @@ describe('Testes na unidade de productsControllers', () => {
       res.status = sinon.stub().returns(res)
       res.json = sinon.stub().returns();
 
-      sinon.stub(productService, 'newProducts').resolves(newProducts)
-      await productControllers.newPost(req, res);
+      sinon.stub(productService, 'newProductsServices').resolves(newProducts)
+      await productControllers.newPostControllers(req, res);
 
       expect(res.status).to.have.been.calledWith(201)
       expect(res.json).to.have.been.calledWith(newProducts)
