@@ -12,4 +12,8 @@ salesRouter.post('/',
   productsIdDBValidation,
   salesController.newSalesController);
 
+salesRouter.get('/', salesController.getAllSales);
+
+salesRouter.get('/:id', salesController.getIdSales);
+
 module.exports = salesRouter;
