@@ -1,15 +1,15 @@
 const express = require('express');
-const productIdDBValidation = require('../middlewares/productIdDBValidation');
 const productIdValidation = require('../middlewares/productIdValidation');
 const productsIdDBValidation = require('../middlewares/productsIdDBValidation');
 const quantityValidation = require('../middlewares/quantityValidation');
+const salesController = require('../controllers/salesController');
 
 const salesRouter = express.Router();
 
-salesRouter.put('/',
+salesRouter.post('/',
   productIdValidation,
   quantityValidation,
-  productIdDBValidation,
-  productsIdDBValidation);
+  productsIdDBValidation,
+  salesController.newSalesController);
 
 module.exports = salesRouter;
