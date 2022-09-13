@@ -12,7 +12,7 @@ const newProducts = async (req) => {
 };
 
 const getIdProducts = async (id) => {
-  const result = await productsModel.getIdProductsModels(id);
+  const [result] = await productsModel.getIdProductsModels(id);
   return result;
 };
 

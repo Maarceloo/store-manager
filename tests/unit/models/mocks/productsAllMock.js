@@ -28,4 +28,6 @@ const products = [
   }
 ]
 
-module.exports = { productsDB, products };
+const newProducts = {id:5, name: 'Mouse'}
+
+module.exports = { productsDB, products, newProducts };
