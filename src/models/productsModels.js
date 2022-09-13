@@ -29,9 +29,18 @@ const changePostModels = async (id, name) => {
   return response;
  };
 
+const deleteProductsModels = async (id) => {
+  const [result] = await connection.execute(
+    'DELETE FROM StoreManager.products WHERE id = (?)', [id],
+  );
+  console.log(result);
+  return result;
+ };
+
 module.exports = {
   getAllProductsModels,
   postNewProductModels,
   getIdProductsModels,
   changePostModels,
+  deleteProductsModels,
 };

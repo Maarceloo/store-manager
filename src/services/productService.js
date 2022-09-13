@@ -28,9 +28,16 @@ const changePostServices = async (req) => {
   return result;
 };
 
+const deleteProductsServices = async (req) => { 
+  const { id } = req.params;
+  const result = await productsModel.deleteProductsModels(id);
+  return result;
+};
+
 module.exports = {
   getAllProductsServices,
   newProductsServices,
   getIdProductsServices,
   changePostServices,
+  deleteProductsServices,
 };

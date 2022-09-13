@@ -19,5 +19,7 @@ productsRouter.put('/:id',
   newProductValidation,
   productsIDValidation,
   productsControler.changePostControllers);
+
+productsRouter.delete('/:id', productsIDValidation, productsControler.deleteProductsControllers);
   
 module.exports = productsRouter;

@@ -24,4 +24,15 @@ const changePostControllers = async (req, res) => {
   res.status(200).json(result);
 };
 
-module.exports = { getAllControllers, getIdControllers, newPostControllers, changePostControllers };
+const deleteProductsControllers = async (req, res) => { 
+  const result = await productService.deleteProductsServices(req);
+  if (result) res.status(204).json();
+};
+
+module.exports = {
+  getAllControllers,
+  getIdControllers,
+  newPostControllers,
+  changePostControllers,
+  deleteProductsControllers,
+};
