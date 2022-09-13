@@ -10,4 +10,15 @@ const newSalesServices = async (sales) => {
   return obj;
 };
 
-module.exports = { newSalesServices };
+const getAllSalesService = async () => {
+  const result = await salesModels.getAllSalesModels();
+  return result;
+};
+ 
+const getIdSalesServices = async (req) => { 
+  const { id } = req.params;
+  const result = await salesModels.getIdSalesModels(id);
+  return result;
+};
+
+module.exports = { newSalesServices, getAllSalesService, getIdSalesServices };
