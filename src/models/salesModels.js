@@ -35,7 +35,6 @@ const getIdSalesModels = async (id) => {
     ORDER BY P.product_id;
 `, [id],
   );
-  console.log(response, id);
   return response;
 };
 

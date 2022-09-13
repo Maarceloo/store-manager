@@ -8,6 +8,3 @@ const productIdValidation = async (req, res, next) => {
 };
 
 module.exports = productIdValidation;
-
-  // verifica se o products id é um numero
-  // const key = products.every((iten) => typeof iten.productId === 'number');

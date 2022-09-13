@@ -84,13 +84,32 @@
     "colId": "5afad8cb-ff00-4e6b-8460-d0786fb7ce9b",
     "containerId": "",
     "name": "getIdSales",
-    "url": "http://localhost:3000/sales/3",
+    "url": "http://localhost:3000/sales/2",
     "method": "GET",
     "sortNum": 60000,
     "created": "2022-09-13T17:57:19.355Z",
-    "modified": "2022-09-13T18:31:28.134Z",
+    "modified": "2022-09-13T19:29:52.669Z",
     "headers": [],
     "params": [],
+    "tests": []
+  },
+  {
+    "_id": "ba12b714-c2f1-43af-9832-a1e0225d0aa4",
+    "colId": "5afad8cb-ff00-4e6b-8460-d0786fb7ce9b",
+    "containerId": "",
+    "name": "alteraProducts",
+    "url": "http://localhost:3000/products/2",
+    "method": "PUT",
+    "sortNum": 35000,
+    "created": "2022-09-13T19:29:19.918Z",
+    "modified": "2022-09-13T20:00:26.447Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\": \"Marteaaaaasd\"\n}",
+      "form": []
+    },
     "tests": []
   }
 ]
