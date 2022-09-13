@@ -5,7 +5,7 @@ const productsIdDBValidation = async (req, res, next) => {
 
   const allProducts = await productsModels.getAllProductsModels(); 
 
-  const validationInDB = products.some((iten) => 
+  const validationInDB = products.every((iten) => 
     allProducts.find((produtos) => produtos.id === iten.productId));
 
   if (!validationInDB) {
