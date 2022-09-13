@@ -8,12 +8,10 @@ const getAllProductsModels = async () => {
   return response;
 };
 
-const postNewProductModels = async (product) => {
-  await connection.execute('INSERT INTO StoreManager.products(name) VALUES(?)', [product]);
-  const [response] = await connection.execute(
-    'SELECT * FROM StoreManager.products WHERE name=?;', [product],
-  );
-  return response;
+  const postNewProductModels = async (product) => {
+    const [response] = await connection
+      .execute('INSERT INTO StoreManager.products(name) VALUES(?);', [product]);
+  return response.insertId;
 };
 
 const getIdProductsModels = async (id) => {

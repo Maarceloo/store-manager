@@ -1,51 +1,39 @@
-// const sinon = require("sinon")
-// const chai = require("chai")
-// const { expect } = chai;
-// const sinonChai = require("sinon-chai");
-// chai.use(sinonChai)
+const sinon = require("sinon")
+const chai = require("chai")
+const { expect } = chai;
+const sinonChai = require("sinon-chai");
+chai.use(sinonChai)
 
-// const productsModel = require('../../../src/models/productsModels');
+const productsModel = require('../../../src/models/productsModels');
 
-// const { products, productsDB} = require('../models/mocks/productsAllMock');
-// const connection = require("../../../src/models/connection");
+const { products, productsDB, newProducts, newListProducts} = require('../models/mocks/productsAllMock');
+const connection = require("../../../src/models/connection");
 
 
-// describe('Testes na unidade de ProductsModels', () => {
+describe('Testes na unidade de ProductsModels', () => {
 
-//   it('Realizando um GET em todos os produtos', async () => {
+  it('Realizando um GET em todos os produtos', async () => {
 
-//     sinon.stub(connection, 'execute').resolves(productsDB)
-//     await productsModel.getAllProductsModels();
+    sinon.stub(connection, 'execute').resolves([productsDB])
+    const result = await productsModel.getAllProductsModels();
 
-//     expect(productsModel.getAllProductsModels).to.equals(products)
-//   })
+    expect(result).to.be.deep.equal(products)
+    sinon.restore();
+  })
 
-//   //   it('Realizando um GET pelo ID de um produto EXISTENTE', async () => {
-//   //     const req = {params: {id: 1}, body: {}}
-//   //     const res = {}
+    it('Retorna o produto pelo ID', async () => {
 
-//   //     res.status = sinon.stub().returns(res)
-//   //     res.json = sinon.stub().returns();
+    sinon.stub(connection, 'execute').resolves([productsDB[0]])
+    const result = await productsModel.getIdProductsModels(1);
 
-//   //     sinon.stub(productService, 'getIdProducts').resolves(productsDB[0])
-//   //     await productControllers.getId(req, res);
-//   //     sinon.restore()
+    expect(result).to.be.deep.equal(products[0])
+    sinon.restore();
+    })
 
-//   //     expect(res.status).to.have.been.calledWith(200)
-//   //     expect(res.json).to.have.been.calledWith(products[0])
-//   //   })
-  
-//   // it('Realizando um GET pelo ID de um produto INEXISTENTE', async () => {
-//   //     const req = {params: {id: 8}, body: {}}
-//   //     const res = {}
-
-//   //     res.status = sinon.stub().returns(res)
-//   //     res.json = sinon.stub().returns();
-
-//   //     sinon.stub(productService, 'getIdProducts').resolves()
-//   //     await productControllers.getId(req, res);
-
-//   //     expect(res.status).to.have.been.calledWith(404)
-//   //     expect(res.json).to.have.been.calledWith({ message: 'Product not found' })
-//   //   })
-// })
+  it('Criando um novo produto no DB', async () => {
+      sinon.stub(connection, 'execute').resolves([{insertId: 5}])
+      const result = await productsModel.postNewProductModels('Mouse');
+      expect(result).to.be.deep.equal(5)
+      sinon.restore()
+    })
+})

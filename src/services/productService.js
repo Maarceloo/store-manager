@@ -7,8 +7,9 @@ const getAllProducts = async () => {
 
 const newProducts = async (req) => {
   const { name } = req.body;
-  const result = await productsModel.postNewProductModels(name);
-  return result[0];
+  const resultId = await productsModel.postNewProductModels(name);
+  const [newObj] = await productsModel.getIdProductsModels(resultId);
+  return newObj;
 };
 
 const getIdProducts = async (id) => {
