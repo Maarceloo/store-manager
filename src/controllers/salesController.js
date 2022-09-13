@@ -6,4 +6,14 @@ const newSalesController = async (req, res) => {
   res.status(201).json(result);
  };
 
-module.exports = { newSalesController };
+const getAllSalesController = async (_req, res) => {
+  const result = await salesServices.getAllSalesService();
+  res.status(200).json(result);
+ };
+
+const getIdSalesController = async (req, res) => { 
+  const result = await salesServices.getIdSalesServices(req);
+  res.status(200).json(result);
+ };
+
+module.exports = { newSalesController, getAllSalesController, getIdSalesController };
