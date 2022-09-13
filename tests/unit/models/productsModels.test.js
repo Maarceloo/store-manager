@@ -7,7 +7,7 @@ chai.use(sinonChai)
 const productsModel = require('../../../src/models/productsModels');
 
 const { products, productsDB, newProducts, newListProducts} = require('../models/mocks/productsAllMock');
-const connection = require("../../../src/models/connection");
+const connection = require("../../../src/models/db/connection");
 
 
 describe('Testes na unidade de ProductsModels', () => {
