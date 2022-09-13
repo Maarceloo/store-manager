@@ -34,10 +34,24 @@ const deleteProductsServices = async (req) => {
   return result;
 };
 
+const seachGetServices = async (req) => {
+  const { q } = req.query;
+  const allProducts = await productsModel.getAllProductsModels();
+  console.log(q);
+
+  if (!q) {
+    return allProducts;
+  }
+
+  const result = allProducts.filter((iten) => iten.name.includes(q));
+  return result;
+};
+
 module.exports = {
   getAllProductsServices,
   newProductsServices,
   getIdProductsServices,
   changePostServices,
   deleteProductsServices,
+  seachGetServices,
 };

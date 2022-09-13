@@ -6,6 +6,8 @@ const productsIDValidation = require('../middlewares/productsIDValidation');
 
 const productsRouter = express.Router();
 
+productsRouter.get('/search', productsControler.seachGetControllers);
+
 productsRouter.get('/', productsControler.getAllControllers);
 
 productsRouter.get('/:id', productsControler.getIdControllers);

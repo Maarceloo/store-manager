@@ -29,10 +29,16 @@ const deleteProductsControllers = async (req, res) => {
   if (result) res.status(204).json();
 };
 
+const seachGetControllers = async (req, res) => {
+  const result = await productService.seachGetServices(req);
+  res.status(200).json(result);
+};
+
 module.exports = {
   getAllControllers,
   getIdControllers,
   newPostControllers,
   changePostControllers,
   deleteProductsControllers,
+  seachGetControllers,
 };
