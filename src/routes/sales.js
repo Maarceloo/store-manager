@@ -4,12 +4,12 @@ const productIdValidation = require('../middlewares/productIdValidation');
 const productsIdDBValidation = require('../middlewares/productsIdDBValidation');
 const quantityValidation = require('../middlewares/quantityValidation');
 
-const router = express.Router();
+const salesRouter = express.Router();
 
-router.put('/',
+salesRouter.put('/',
   productIdValidation,
   quantityValidation,
   productIdDBValidation,
   productsIdDBValidation);
 
-module.exports = router;
+module.exports = salesRouter;
