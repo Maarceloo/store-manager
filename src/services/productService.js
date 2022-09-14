@@ -30,21 +30,18 @@ const changePostServices = async (req) => {
 
 const deleteProductsServices = async (req) => { 
   const { id } = req.params;
-  const result = await productsModel.deleteProductsModels(id);
-  return result;
+  await productsModel.deleteProductsModels(id);
 };
 
 const seachGetServices = async (req) => {
   const { q } = req.query;
   const allProducts = await productsModel.getAllProductsModels();
-  console.log(q);
 
   if (!q) {
     return allProducts;
   }
 
-  const result = allProducts.filter((iten) => iten.name.includes(q));
-  return result;
+  return allProducts.filter((iten) => iten.name.includes(q));
 };
 
 module.exports = {

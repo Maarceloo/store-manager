@@ -25,8 +25,8 @@ const changePostControllers = async (req, res) => {
 };
 
 const deleteProductsControllers = async (req, res) => { 
-  const result = await productService.deleteProductsServices(req);
-  if (result) res.status(204).json();
+  await productService.deleteProductsServices(req);
+  res.status(204).json();
 };
 
 const seachGetControllers = async (req, res) => {

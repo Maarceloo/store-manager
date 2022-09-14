@@ -29,6 +29,10 @@ const products = [
 ]
 
 const newProducts = { id: 5, name: 'Mouse' }
+const changeProduct = {
+  id: "1",
+  name: "Machado do Kratos"
+}
 
 const newListProducts = [
   {
@@ -49,4 +53,4 @@ const newListProducts = [
   }
 ]
 
-module.exports = { productsDB, products, newProducts, newListProducts };
+module.exports = { productsDB, products, newProducts, newListProducts, changeProduct };

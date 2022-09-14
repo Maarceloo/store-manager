@@ -102,12 +102,12 @@
     "method": "PUT",
     "sortNum": 35000,
     "created": "2022-09-13T19:29:19.918Z",
-    "modified": "2022-09-13T20:00:26.447Z",
+    "modified": "2022-09-14T18:50:22.204Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"name\": \"Marteaaaaasd\"\n}",
+      "raw": "{\n  \"name\": \"Machado do Kratos\"\n}",
       "form": []
     },
     "tests": []
@@ -121,7 +121,7 @@
     "method": "DELETE",
     "sortNum": 90000,
     "created": "2022-09-13T21:02:36.675Z",
-    "modified": "2022-09-13T21:28:12.599Z",
+    "modified": "2022-09-14T17:35:58.652Z",
     "headers": [],
     "params": [],
     "tests": []
@@ -163,6 +163,20 @@
         "isPath": false
       }
     ],
+    "tests": []
+  },
+  {
+    "_id": "3d5caee8-235d-463e-8371-285bdfcbf018",
+    "colId": "5afad8cb-ff00-4e6b-8460-d0786fb7ce9b",
+    "containerId": "",
+    "name": "deleteSales",
+    "url": "http://localhost:3000/sales/1",
+    "method": "DELETE",
+    "sortNum": 120000,
+    "created": "2022-09-14T19:21:24.741Z",
+    "modified": "2022-09-14T19:21:44.718Z",
+    "headers": [],
+    "params": [],
     "tests": []
   }
 ]
