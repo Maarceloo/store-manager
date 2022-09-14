@@ -27,5 +27,19 @@ const getIDSales = [
   },
 ];
 
+const newSalesMock = {
+  id: 4,
+  itemsSold: [
+    {
+      productId: 1,
+      quantity: 1,
+    },
+    {
+      productId: 2,
+      quantity: 5,
+    },
+  ],
+};
 
-module.exports = { getAllSales, getIDSales };
+
+module.exports = { getAllSales, getIDSales, newSalesMock };
