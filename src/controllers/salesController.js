@@ -17,8 +17,8 @@ const getIdSalesController = async (req, res) => {
  };
 
 const deleteSalesControllers = async (req, res) => {
-  const result = await salesServices.deleteSalesServices(req);
-  if (result) res.status(204).json();
+  await salesServices.deleteSalesServices(req);
+  res.status(204).json();
 };
 
 const changeSalesControllers = async (req, res) => {

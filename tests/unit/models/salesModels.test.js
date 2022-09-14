@@ -9,7 +9,7 @@ const salesModels = require("../../../src/models/salesModels");
 const { getAllSales, getIDSales } = require("../models/mocks//salesAllMock");
 const connection = require("../../../src/models/db/connection");
 
-describe("Testes na unidade de ProductsModels", () => {
+describe("Testes na unidade de SalesModels", () => {
   afterEach(() => {
     sinon.restore();
   });
